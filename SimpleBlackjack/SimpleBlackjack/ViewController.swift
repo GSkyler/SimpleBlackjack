@@ -10,18 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let suits = ["C", "S", "H", "D"]
     var balance:Int = 100
     var bet:Int = 10
+    var mainDeck:Array<Card> = []
+    var pCardImageViews:Array<UIImageView> = []
+    var dCardImageViews:Array<UIImageView> = []
     var deck:Array<Int> = []
     var pCards:Array<Int> = []
     var dCards:Array<Int> = []
+    var pCardObjects:Array<Card> = []
+    var dCardObjects:Array<Card> = []
     @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var dealerCardLabel: UILabel!
-    @IBOutlet weak var playerCardLabel: UILabel!
+//    @IBOutlet weak var playerSumLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+//    @IBOutlet weak var dealerSumLabel: UILabel!
     @IBOutlet weak var betLabel: UILabel!
     @IBOutlet weak var hitButton: UIButton!
     @IBOutlet weak var standButton: UIButton!
+    @IBOutlet weak var dealerCard1: UIImageView!
+    @IBOutlet weak var dealerCard2: UIImageView!
+    @IBOutlet weak var dealerCard3: UIImageView!
+    @IBOutlet weak var dealerCard4: UIImageView!
+    @IBOutlet weak var dealerCard5: UIImageView!
+    @IBOutlet weak var dealerCard6: UIImageView!
+    @IBOutlet weak var dealerCard7: UIImageView!
+    @IBOutlet weak var playerCard1: UIImageView!
+    @IBOutlet weak var playerCard2: UIImageView!
+    @IBOutlet weak var playerCard3: UIImageView!
+    @IBOutlet weak var playerCard4: UIImageView!
+    @IBOutlet weak var playerCard5: UIImageView!
+    @IBOutlet weak var playerCard6: UIImageView!
+    @IBOutlet weak var playerCard7: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +55,21 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(upSwipe)
         view.addGestureRecognizer(downSwipe)
         
+        pCardImageViews.append(playerCard1)
+        pCardImageViews.append(playerCard2)
+        pCardImageViews.append(playerCard3)
+        pCardImageViews.append(playerCard4)
+        pCardImageViews.append(playerCard5)
+        pCardImageViews.append(playerCard6)
+        pCardImageViews.append(playerCard7)
+        dCardImageViews.append(dealerCard1)
+        dCardImageViews.append(dealerCard2)
+        dCardImageViews.append(dealerCard3)
+        dCardImageViews.append(dealerCard4)
+        dCardImageViews.append(dealerCard5)
+        dCardImageViews.append(dealerCard6)
+        dCardImageViews.append(dealerCard7)
+        
         balanceLabel.text = "\(balance)"
         betLabel.text = "\(bet)"
         reset()
@@ -44,8 +79,9 @@ class ViewController: UIViewController {
     @IBAction func handleHit(_ sender: Any) {
         hit(playerHit: true)
         let cardSum = calcSum(playerSum: true)
+//        playerSumLabel.text = "Your sum: \(cardSum)"
         if cardSum > 21{
-            playerCardLabel.text! += " YOU BUSTED"
+//            playerSumLabel.text! += " YOU BUSTED"
             resultLabel.text = "YOU LOSE"
             balance -= bet
             balanceLabel.text = "\(balance)"
@@ -53,11 +89,38 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func handleDouble(_ sender: Any) {
+        let oldBet = bet
+        bet *= 2
+        if bet > balance {
+            bet = balance
+        }
+        
+        hit(playerHit: true)
+        
+        if calcSum(playerSum: true) > 21 {
+            resultLabel.text = "YOU LOSE"
+            balance -= bet
+            balanceLabel.text = "\(balance)"
+            endHand()
+        }
+        else{
+            dCardObjects[1].setHidden(hidden: false)
+            updateImageViews()
+            handleDealerPlay()
+        }
+        
+        bet = oldBet
+    
+    }
+    
     @IBAction func handleReset(_ sender: Any) {
         reset()
     }
     
     @IBAction func handleStand(_ sender: Any) {
+        dCardObjects[1].setHidden(hidden: false)
+        updateImageViews()
         handleDealerPlay()
     }
     
@@ -81,40 +144,55 @@ class ViewController: UIViewController {
         deck.removeAll()
         pCards.removeAll()
         dCards.removeAll()
-        playerCardLabel.text = ""
-        dealerCardLabel.text = ""
+        pCardObjects.removeAll()
+        dCardObjects.removeAll()
+//        playerSumLabel.text = ""
+//        dealerSumLabel.text = ""
         resultLabel.text = ""
-        for _ in 1...4{
-            for i in 1...9{
-                deck.append(i)
+        for suit in suits{
+            for i in 2...10{
+                let cardName = suit + "\(i)"
+                let path = Bundle.main.path(forResource: cardName, ofType: "jpg", inDirectory: "cards")!
+                mainDeck.append(Card(v: i, path: path))
             }
-            for _ in 1...4{
-                deck.append(10)
+            for i in 11...13{
+                let cardName = suit + "\(i)"
+                let path = Bundle.main.path(forResource: cardName, ofType: "jpg", inDirectory: "cards")!
+                mainDeck.append(Card(v: 10, path: path))
             }
+            let cardName = suit + "14"
+            let path = Bundle.main.path(forResource: cardName, ofType: "jpg", inDirectory: "cards")!
+            mainDeck.append(Card(v: 1, path: path))
         }
         hitButton.isEnabled = true
         standButton.isEnabled = true
-        dCards.append(deck.remove(at: Int.random(in: 0..<deck.count)))
-        dealerCardLabel.text = "\(dCards)"
+        pCardObjects.append(mainDeck.remove(at: Int.random(in: 0..<mainDeck.count)))
+        dCardObjects.append(mainDeck.remove(at: Int.random(in: 0..<mainDeck.count)))
+        pCardObjects.append(mainDeck.remove(at: Int.random(in: 0..<mainDeck.count)))
+        dCardObjects.append(mainDeck.remove(at: Int.random(in: 0..<mainDeck.count)))
+        dCardObjects[1].setHidden(hidden: true)
+        
+        updateImageViews()
+        
+//        playerSumLabel.text = "Your sum: \(calcSum(playerSum: true))"
+//        dealerSumLabel.text = "Dealer sum: ?"
     }
     
     func handleDealerPlay(){
-        var dealerSum = 0
+        var dealerSum = calcSum(playerSum: false)
         while dealerSum <= 16 {
             hit(playerHit: false)
             dealerSum = calcSum(playerSum: false)
         }
         if dealerSum > 21 {
-            dealerCardLabel.text! += " DEALER BUSTED"
+//            dealerSumLabel.text! += " DEALER BUSTED"
             resultLabel.text = "YOU WIN"
             balance += bet
             balanceLabel.text = "\(balance)"
             endHand()
         }
         else if dealerSum == calcSum(playerSum: true){
-            resultLabel.text = "DEALER WINS"
-            balance -= bet
-            balanceLabel.text = "\(balance)"
+            resultLabel.text = "TIE"
             endHand()
         }
         else if dealerSum > calcSum(playerSum: true){
@@ -131,28 +209,56 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateImageViews(){
+        clearImageViews()
+        var nextPCardX = 20
+        var nextDCardX = 20
+        
+        for i in 0...pCardObjects.count-1 {
+            let cardImage = UIImage.init(contentsOfFile: pCardObjects[i].getPath())!
+            pCardImageViews[i] = UIImageView(image: cardImage)
+            pCardImageViews[i].frame = CGRect(x: nextPCardX, y: 350, width: 70, height: 100)
+            self.view.addSubview(pCardImageViews[i])
+            nextPCardX += 30
+        }
+        for i in 0...dCardObjects.count-1 {
+            let cardImage = UIImage.init(contentsOfFile: dCardObjects[i].getPath())!
+            dCardImageViews[i] = UIImageView(image: cardImage)
+            dCardImageViews[i].frame = CGRect(x: nextDCardX, y: 150, width: 70, height: 100)
+            self.view.addSubview(dCardImageViews[i])
+            nextDCardX += 30
+        }
+    }
+    func clearImageViews() {
+        for imageView in pCardImageViews {
+            imageView.removeFromSuperview()
+        }
+        for imageView in dCardImageViews {
+            imageView.removeFromSuperview()
+        }
+    }
+    
     func hit(playerHit:Bool){
-        let rNum = Int.random(in: 0..<deck.count)
+        let rNum = Int.random(in: 0..<mainDeck.count)
         if(playerHit){
-            pCards.append(deck.remove(at: rNum))
-            playerCardLabel.text = "\(pCards)"
+            pCardObjects.append(mainDeck.remove(at: rNum))
         }
         else{
-            dCards.append(deck.remove(at: rNum))
-            dealerCardLabel.text = "\(dCards)"
+            dCardObjects.append(mainDeck.remove(at: rNum))
         }
+        updateImageViews()
     }
     
     func calcSum(playerSum: Bool) -> Int {
         var sum = 0
         if(playerSum){
-            for num in pCards{
-                sum += num
+            for card in pCardObjects {
+                sum += card.getVal()
             }
         }
         else{
-            for num in dCards{
-                sum += num
+            for card in dCardObjects {
+                sum += card.getVal()
             }
         }
         return sum
@@ -165,3 +271,30 @@ class ViewController: UIViewController {
     
 }
 
+class Card {
+    
+    var val:Int
+    var cardPath:String
+    var isHidden:Bool
+    
+    init(v: Int, path: String){
+        val = v
+        cardPath = path
+        isHidden = false
+    }
+    
+    func setHidden(hidden: Bool){
+        isHidden = hidden
+    }
+    
+    func getVal() -> Int {
+        return val
+    }
+    func getPath() -> String {
+        if !isHidden{
+            return cardPath
+        }
+        return Bundle.main.path(forResource: "BACK-2", ofType: "jpg", inDirectory: "cards")!
+    }
+    
+}

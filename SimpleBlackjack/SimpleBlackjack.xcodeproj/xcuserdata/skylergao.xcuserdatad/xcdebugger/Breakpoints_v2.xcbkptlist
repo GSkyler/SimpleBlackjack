@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9977985A-1776-4906-912A-8D3E82ABBE77"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleBlackjack/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - cfba2ebf74a1118a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.standButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - 2b158616f236e1b6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.standButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - e4e6e4680e86ed87"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.standButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - ed8c5a389af24c8c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.standButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - 95fe7a10c596d4a7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SimpleBlackjack.ViewController"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "2315">
+               </Location>
+               <Location
+                  uuid = "7A93B421-241C-4C7C-85CA-8AF1247F4D00 - 81c51af2ef7cbca8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SimpleBlackjack.ViewController&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "2263">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13F945E6-5865-45DF-BD3D-484B63072F91"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleBlackjack/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - 5eac0f3800ff3f8e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.pCardImageViews.getter : Swift.Array&lt;__C.UIImageView&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - 833de98231488fba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.pCardImageViews.setter : Swift.Array&lt;__C.UIImageView&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - 15934d46f6279b8b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.pCardImageViews.modify : Swift.Array&lt;__C.UIImageView&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - f6df642354752790"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.pCardImageViews.modify : Swift.Array&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - 95fe7a10c596d4a7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SimpleBlackjack.ViewController"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "704">
+               </Location>
+               <Location
+                  uuid = "13F945E6-5865-45DF-BD3D-484B63072F91 - 81c51af2ef7cbca8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleBlackjack.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SimpleBlackjack.ViewController&gt;"
+                  moduleName = "SimpleBlackjack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/skylergao/Desktop/SimpleBlackjack/SimpleBlackjack/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
